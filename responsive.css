@@ -1,0 +1,273 @@
+/* 1. Mobile First Approach */
+:root {
+    --pry-color: #e50914;
+    --dark-color: #141414;
+    --light-color: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #000;
+    color: #fff;
+    font-size: 16px; 
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 3. Fluid units: vh, vw, clamp() */
+.showcase {
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/7fb62e44-31fd-4e1f-b6ae-0b9f07982f57/US-en-20231009-popsignuptwoweeks-perspective_alpha_website_large.jpg') no-repeat center center/cover;
+}
+
+.showcase::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.showcase-top {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showcase-top img {
+    width: clamp(80px, 15vw, 150px); /*clam(MIN, PREFERRED,     )  */
+}
+
+.showcase-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5vh;
+    padding: 0 5vw;
+}
+
+.showcase-content h1 {
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    margin-bottom: 1rem;
+}
+
+.showcase-content p {
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+    margin-bottom: 1rem;
+}
+
+/* Default Mobile layout */
+.email-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.email-form input {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #8c8c8c;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--pry-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: #f40612;
+}
+
+.btn-rounded {
+    border-radius: 5px;
+}
+
+.btn-lg {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+}
+
+/* Sections - Default Mobile Layout */
+.style-cards {
+    border-top: 8px solid #222;
+    padding: 3rem 5vw;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.card-text h2 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.card-text p {
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+}
+
+.card img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* Trending Section */
+.trending-section {
+    padding: 3rem 5vw;
+}
+
+.section-title {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+}
+
+/* 3. Fluid Units & Mobile First Grid */
+.video-grid {
+    display: grid;
+    /* Default mobile view: 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* Fluid gap */
+    gap: clamp(10px, 2vw, 20px);
+}
+
+.video-card {
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.video-card img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    display: block;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles (Mobile First) */
+.footer {
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem 5vw;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.footer a {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-bottom: 1.5rem;
+}
+
+.footer-cols {
+    display: grid;
+    /* 2 columns on mobile */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.footer li {
+    line-height: 1.9;
+    list-style: none;
+}
+
+/* Media queries */
+/* Common breakpoints: 480px-767px (Mobile), 768px-1023px (Tablet), 1024px+ (Desktop) */
+/* 1. Mobile First Approach: Enhance layout for larger screens */
+@media (min-width: 768px) {
+    .email-form {
+        flex-direction: row;
+    }
+    
+    .email-form input {
+        flex: 1;
+    }
+
+    .card {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .card-text {
+        flex: 1;
+        padding-right: 2rem;
+    }
+
+    .card img {
+        flex: 1;
+    }
+
+    .video-grid {
+        /* Tablet view: 4 columns */
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .footer-cols {
+        /* 4 columns on tablet/desktop */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* Larger desktop screens */
+@media (min-width: 1024px) {
+    .video-grid {
+        /* Desktop view: 6 columns */
+        grid-template-columns: repeat(6, 1fr);
+    }
+}

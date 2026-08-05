@@ -1,0 +1,257 @@
+.pelumi-super {
+  color: purple;
+}
+.hope-pro {
+  background-color: orange;
+}
+.sect4 {
+  display: flex;
+  justify-content: center;
+}
+.heading-sect4 {
+  color: tomato;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-decoration: underline;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  border: 2px dotted red;
+}
+.para-sect4 {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Times New Roman", serif;
+  line-height: 1;
+  word-spacing: 2px;
+  word-break: break-word;
+}
+/* Colors and Typography */
+.color-text {
+  color: black;
+  background-color: rgba(252, 0, 0, 0.5);
+  border: 1px solid;
+  border-color: hsla(240, 100%, 50%, 0.5);
+}
+
+.typography {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-weight: bolder;
+  word-spacing: 1px;
+  font-style: italic;
+}
+
+.montserrat-grace {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+/* The box model */
+.box-model {
+  max-width: 500px;
+  max-height: 500px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+/* Display and visibility*/
+/* Display*/
+/* types of display values(flex, grid, inline, block, inline-block, none) */
+.display {
+  display: inline-block;
+  justify-content: center;
+  align-items: end;
+  border: 2px solid black;
+  /* visibility: visible; */
+}
+
+/* visibility */
+.visibility {
+  visibility: visible;
+}
+/*  07/07/26 */
+/* 1. Flexbox basics */
+/* justify-content(space-around, space-between, space-evenly, center, flex-start, flex-end) */
+.flexbox-basics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 2. Flexbox alignment */
+/* align-items/align-self(center, flex-start, flex-end) */
+.flexbox-alignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 200px;
+  border: 1px solid black;
+}
+.flexbox-alignment li a {
+  display: flex;
+  align-self: flex-end;
+  border: 1px solid black;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+/* 3. Flexbox wrapping & growing */
+.flexbox-wrapping {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.child {
+  width: 25%;
+  height: auto;
+  background-color: lightblue;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.parent-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.profile-pic {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-style: italic;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 9th July 2026 */
+/* 1. CSS grid basics */
+.grid-basics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.grid-basics div {
+  /* width: 25%; */
+  height: 40vh;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.grid-basics span {
+  /* width: 25%; */
+  height: 40vh;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* 2. CSS grid placement */
+.cont2 {
+  display: grid;
+  /* gap: 10px; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 30px);
+}
+
+.header-left {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+}
+.header-right {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+}
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 3 / 7;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+}
+.main {
+  grid-column: 2 / 5;
+  grid-row: 3 / 5;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+}
+.footer {
+  grid-column: 2 / 5;
+  grid-row: 5 / 7;
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+}
+.items {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.text {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 20px;
+}
+
+.text div {
+  background-color: rgb(255, 103, 48);
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+}

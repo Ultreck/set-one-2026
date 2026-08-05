@@ -1,0 +1,10 @@
+
+
+
+@keyframes slideIn {
+    from {opacity: 0;} to {opacity: 1;}
+}
+
+.parent {
+    animation: slideIn 0.5s ease forwards
+}
