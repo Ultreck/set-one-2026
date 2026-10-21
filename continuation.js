@@ -1,0 +1,1 @@
+console.log("I welcome you both back to JavaScript class")
