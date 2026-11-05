@@ -241,20 +241,20 @@ student.department = "Computer Science"; // This is used to add a new property t
 student.matriNumber = "FUTA/2026/12345";
 student.level = "400L";
 //single threaded language, it can only execute one command at a time, it is also synchronous in nature
-console.log(student);
+// console.log(student);
 //2. Bracket notation
 student["email"] = "emmanuel@futa.edu.ng";
 student["blackbook"] = false; //boolean
 student["age"] = 20;
 student["subjects"] = ["MTS401", "CSC403", "EMT309"];
-console.log(student);
+// console.log(student);
 // Deleting properties from an object
 //1. Dot notation
 // delete student.age;
-console.log(student);
+// console.log(student);
 //2. Bracket notation
-delete student["blackbook"];
-console.log(student);
+// delete student["blackbook"];
+// console.log(student);
 
 // const car = {};
 // car.name = "Toyota";
@@ -304,34 +304,34 @@ const university = {
   ],
 };
 
-// console.log(university);
-// console.log(university.location.country.name);
-// university.departments.forEach((dept) =>
-//   console.log(`Department: ${dept.name}, Head: ${dept.head}`),
+// // console.log(university);
+// // console.log(university.location.country.name);
+// // university.departments.forEach((dept) =>
+// //   console.log(`Department: ${dept.name}, Head: ${dept.head}`),
+// // );
+
+// // 4th Nov 2026
+// // A. Destructuring (This is used to extract values from an object or an array and assign them to variables)
+// //1. Object destructuring
+// const users = [
+//   { id: 1, name: "Alice", role: "registrar", email: "alice@futa.edu.ng" },
+//   { id: 2, name: "Bob", role: "student", email: "bob@futa.edu.ng" },
+//   { id: 3, name: "Charlie", role: "student", email: "charlie@futa.edu.ng" },
+// ];
+// console.log(users);
+// const userProfiles = users[0];
+// console.log(userProfiles);
+// const { id, name, role, email } = userProfiles;
+// console.log(`ID: ${id}, Name: ${name}, Role: ${role}, Email: ${email}`);
+
+// // 2. Array destructuring
+// const fruits = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+// const [firstFruit, secondFruit, thirdFruit] = fruits;
+// console.log(
+//   `First Fruit: ${firstFruit}, Second Fruit: ${secondFruit}, Third Fruit: ${thirdFruit}`,
 // );
 
-// 4th Nov 2026
-// Destructuring (This is used to extract values from an object or an array and assign them to variables)
-//1. Object destructuring
-const users = [
-  { id: 1, name: "Alice", role: "registrar", email: "alice@futa.edu.ng" },
-  { id: 2, name: "Bob", role: "student", email: "bob@futa.edu.ng" },
-  { id: 3, name: "Charlie", role: "student", email: "charlie@futa.edu.ng" },
-];
-console.log(users);
-const userProfiles = users[0];
-console.log(userProfiles);
-const { id, name, role, email } = userProfiles;
-console.log(`ID: ${id}, Name: ${name}, Role: ${role}, Email: ${email}`);
-
-// 2. Array destructuring
-const fruits = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
-const [firstFruit, secondFruit, thirdFruit] = fruits;
-console.log(
-  `First Fruit: ${firstFruit}, Second Fruit: ${secondFruit}, Third Fruit: ${thirdFruit}`,
-);
-
-// 3. Nested destructuring
+// // 3. Nested destructuring
 console.log(university);
 const {
   name: uniName,
@@ -360,17 +360,108 @@ console.log(
   dept2Head,
 );
 
-console.log(
-  university.name,
-  university.location.city,
-  university.location.state,
-  university.location.country.name,
-  university.location.country.countrycode,
-  university.location.country.continent,
-  university.location.country.currency,
-  university.location.country.phonecode,
-  university.departments[0].name,
-  university.departments[0].head,
-  university.departments[1].name,
-  university.departments[1].head,
-);
+// console.log(
+//   university.name,
+//   university.location.city,
+//   university.location.state,
+//   university.location.country.name,
+//   university.location.country.countrycode,
+//   university.location.country.continent,
+//   university.location.country.currency,
+//   university.location.country.phonecode,
+//   university.departments[0].name,
+//   university.departments[0].head,
+//   university.departments[1].name,
+//   university.departments[1].head,
+// );
+// 5th Nov 2026
+// B. Spread operator (This is used to spread the elements of an array or object into a new array or object)
+// 1. Spread operator with arrays
+const primeNumbers = [2, 3, 5, 7, 11];
+const oddNumbers = [1, 2, 3, 5, 7, 9];
+const evenNumbers = [10, 12, 14, 16, 18];
+console.log(primeNumbers, oddNumbers, evenNumbers);
+const allNumbers = [...primeNumbers, ...oddNumbers, ...evenNumbers];
+console.log("All Numbers:", allNumbers);
+const [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p] = allNumbers;
+console.log(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p);
+
+
+// 2. Spread operator with objects
+const person = {
+  firstName: "Emmanuel",
+  lastName: "Oluwatayese",
+  age: 25,
+  gender: "Male",
+  address: {
+    street: "123 Main St",
+    city: "Akure",
+    state: "Ondo",
+    country: "Nigeria",
+  },
+};
+console.log(person);
+
+const updatedPerson = {
+  ...person.address,
+  firstName: person.firstName,
+  lastName: person.lastName,
+  age: person.age,
+  gender: person.gender,
+  profile: "Software Engineer",
+  bio: "I am a software engineer with 5 years of experience in web development.",
+};
+console.log("Updated Person:", updatedPerson);
+const updatedPerson2 = {
+  firstName: person.firstName,
+  lastName: person.lastName,
+  age: person.age,
+  gender: person.gender,
+  city: person.address.city,
+  state: person.address.state,
+  country: person.address.country,
+  street: person.address.street,
+  profile: "Software Engineer",
+  bio: "I am a software engineer with 5 years of experience in web development.",
+};
+console.log("Updated Person 2:", updatedPerson2);
+
+// Scope & closure
+// 1. Scope
+// Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime.
+// There are two types of scope: global scope and local scope.
+// Global scope is the accessibility of variables, functions, and objects in the entire code.
+// Local scope is the accessibility of variables, functions, and objects in a particular part of your code.
+
+const pi = 3.14159; // Global scope
+const shape = {
+  name: "Rectangle",
+  width: 10,
+  height: 20,
+  area: function () {
+    const area = this.width * this.height; // Local scope 
+    return area;
+  }
+}
+
+console.log(shape.area()); // Output: 200
+
+const shape2 = {
+  name: "Circle",
+  radius: 5, // Local scope
+  area: function () {
+    const area = pi * this.radius ** 2; // Local scope
+    return area;
+  }
+};
+console.log(shape2.area()); // Output: 78.53975
+
+const Hope = {
+  name: "circle",
+  area: function () {
+    const area = pi * radius ** 2;
+    return area;
+  }
+};
+console.log(shape3.area()); // Output: 78.53975
+
